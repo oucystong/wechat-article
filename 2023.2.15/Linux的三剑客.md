@@ -321,9 +321,9 @@ sed命令总结：
 
 awk是发明该工具三个作者姓名的首字母简称，awk是一个报表生成器，主要用于格式化输出，三个作者分别是：
 
-* `Alfred Aho`
-* `Peter Weinberger` 
-* `Brian Kernighan`
+* Alfred Aho
+* Peter Weinberger 
+* Brian Kernighan
 
 awk按照行来读取文档，根据输入分隔符切分成小部分，用内建变量来表示，例如$1，$2，$3等，$0表示整行。
 
