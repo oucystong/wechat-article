@@ -213,14 +213,14 @@
  * 内边距 padding: 5px 10px;
  */
 #nice table tr th {
-  border: 1px solid #009688;
-  background-color: #009688;
+  border: 1px solid #ff7900;
+  background-color: #ff7900;
   color: #f8f8f8;
   border-bottom: 0;
 }
 
 #nice table tr td {
-  border: 1px solid #009688;
+  border: 1px solid #ff7900;
 }
 
 #nice table tr:nth-child(2n) {
