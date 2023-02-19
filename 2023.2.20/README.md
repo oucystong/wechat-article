@@ -66,7 +66,7 @@
 
 >`Github`地址：https://github.com/fvarrui/JavaPackager
 
-* [Recaf](https://www.coley.software/Recaf/)：基于JavaFx构建的开源字节码编辑器。
+* [Recaf](https://www.coley.software/Recaf/)：基于`JavaFx`构建的开源字节码编辑器。
 
 >官网：https://www.coley.software/Recaf/
 >
@@ -94,7 +94,7 @@
 
 >`Github`地址：https://github.com/keycastr/keycastr
 
-* [warp](https://www.warp.dev/)：`21世纪`的专为程序员开发的终端工具。
+* [warp](https://www.warp.dev/)：`21`世纪的专为程序员开发的终端工具。
 
 > 官网：https://www.warp.dev/
 
@@ -168,7 +168,7 @@
 >
 >`AppStore`地址：https://apps.apple.com/cn/app/effie-%E4%BC%98%E9%9B%85%E5%9C%B0%E5%86%99%E4%BD%9C%E5%92%8C%E8%AE%B0%E5%BD%95/id1501472754
 >
->作者：`李自然说`（一个有趣的灵魂）
+>作者：李自然说（一个有趣的灵魂）
 
 * [ibar](https://www.better365.cn/ibar.html)：`Mac`下免费的菜单栏图标管理软件。
 
@@ -186,7 +186,7 @@
 
 >官网：https://zclock.xyz/index.html
 >
->下载地址：https://apps.apple.com/cn/app/zclock-%E7%BD%AE%E9%A1%B6%E6%97%B6%E9%92%9F-%E5%80%92%E8%AE%A1%E6%97%B6-%E7%BD%91%E9%80%9F%E6%98%BE%E7%A4%BA/id1478540997?mt=12
+>`AppStore`下载地址：https://apps.apple.com/cn/app/zclock-%E7%BD%AE%E9%A1%B6%E6%97%B6%E9%92%9F-%E5%80%92%E8%AE%A1%E6%97%B6-%E7%BD%91%E9%80%9F%E6%98%BE%E7%A4%BA/id1478540997?mt=12
 
 * [Mini Calendar](https://apps.apple.com/cn/app/mini-calendar/id1088779979?mt=12)：`Mac`上的桌面日历工具。
 
@@ -208,7 +208,7 @@
 
 * [Lattics](https://apps.apple.com/cn/app/lattics-%E7%B1%BB%E8%84%91%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0%E4%B8%8E%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C/id1575605022?mt=12)：`Mac`上强大的笔记软件。
 
->下载地址：https://apps.apple.com/cn/app/lattics-%E7%B1%BB%E8%84%91%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0%E4%B8%8E%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C/id1575605022?mt=12
+>`AppStore`下载地址：https://apps.apple.com/cn/app/lattics-%E7%B1%BB%E8%84%91%E5%BC%8F%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0%E4%B8%8E%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C/id1575605022?mt=12
 
 * [Tickeys](http://www.yingdev.com/projects/tickeys#)：普通键盘模拟机械键盘的声音。
 
@@ -220,9 +220,9 @@
 
 * [Bartender](https://www.macbartender.com/)：`Mac`上的菜单栏管理软件。
 
->`3版本`下载地址：https://www.macbartender.com/Bartender3.html
+>`3`版本下载地址：https://www.macbartender.com/Bartender3.html
 >
->`4版本`下载地址：https://www.macbartender.com/
+>`4`版本下载地址：https://www.macbartender.com/
 >
->注意：`4版本`要求最低支持`Big Sur`或者更新的系统
+>注意：`4`版本要求最低支持`Big Sur`或者更新的系统
 
