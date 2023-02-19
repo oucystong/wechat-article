@@ -62,7 +62,7 @@
 >
 >`Github`地址：https://github.com/864381832/xJavaFxTool
 
-* [JavaPackager](https://github.com/fvarrui/JavaPackager)：`Java`应用的****打包工具****，可以为`Windows`、`Mac`、`Linux`打包应用。
+* [JavaPackager](https://github.com/fvarrui/JavaPackager)：`Java`应用的打包工具，可以为`Windows`、`Mac`、`Linux`打包应用。
 
 >`Github`地址：https://github.com/fvarrui/JavaPackager
 
