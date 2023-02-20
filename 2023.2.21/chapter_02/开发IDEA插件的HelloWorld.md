@@ -298,7 +298,7 @@ public class HelloWorldAction extends AnAction {
 
 ![image-20230220152649222](assets/image-20230220152649222.png)
 
-注意因为Windows和Mac键盘存在差异，所以在Mac上绑定上面的快捷键，但是当你按下对应快捷键的时候并不会触发，这是因为Control被绑定成了Command，所以按下Command+Shift+9的时候，在Mac上会触发上面的通知信息。如果不知道绑定了哪些快捷键，可以在应用偏好设置中搜索keymap进行查看。
+注意因为Windows和Mac键盘存在差异，所以在Mac上绑定上面的快捷键，但是当你按下对应快捷键的时候并不会触发，这是因为Control被绑定成了Command，所以按下Command+Shift+9的时候，在Mac上会触发上面的通知信息。如果不知道绑定了哪些快捷键，可以在应用偏好设置中搜索KeyMap进行查看。
 
 ![image-20230220153304801](assets/image-20230220153304801.png)
 
