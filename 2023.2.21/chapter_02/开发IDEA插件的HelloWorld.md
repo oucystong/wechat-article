@@ -134,19 +134,126 @@ tasks {
 
 ```
 
+我们继续来看一下resources/META-INF/plugin.xml文件的信息：
+
+```xml
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.codermonster.hello-world-plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <!-- 运行插件项目显示的插件名称 -->
+    <name>Hello-world-plugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <!-- 联系信息 -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <!-- 插件说明 -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+</idea-plugin>
+```
+
+Gradle Wrapper的配置文件是gradle/wrapper/gradle-wrapper.properties，我们继续看一下该文件的信息：
+
+```properties
+# 解压Gradle压缩包之后的文件存放处
+distributionBase=GRADLE_USER_HOME
+# 解压Gradle压缩包之后的文件存放处，相对于distributionBase设置的路径基础之上的文件路径
+distributionPath=wrapper/dists
+# 下载地址
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+# Gradle压缩包文件存放处
+zipStoreBase=GRADLE_USER_HOME
+# Gradle压缩包文件存放处，相对于zipStoreBase设置的路径基础之上的文件路径
+zipStorePath=wrapper/dists
+```
+
+至此，我们已经完成了一个插件项目的创建，在项目的右上方可以直接运行项目，点击运行之后，会在沙盒中新打开一个IDEA窗口。
+
+![image-20230220144805564](assets/image-20230220144805564.png)
+
+我们可以看到该IDEA窗口的版本信息和配置文件build.gradle.kts中规定的版本信息一致。除此之外，点击Plugins，可以看到新创建的插件已经被安装在新打开的IDEA中了。
+
+![image-20230220144959225](assets/image-20230220144959225.png)
+
+关闭新创建IDEA的窗口即可结束插件项目的运行。
+
+## 运行项目的三种方式
+
+按照上面的过程创建完插件项目之后，在IDEA界面的右上角会自动出现Run Plugin的按钮，点击即可运行，除此之外，还有其他两种运行插件的方式，总结三种运行插件项目的方式如下：
+
+![image-20230220144427336](assets/image-20230220144427336.png)
+
+如果右上角没有出现Run Plugin的按钮，也可以自行配置，点击Edit Configurations。
+
+![image-20230220145342779](assets/image-20230220145342779.png)
+
+添加运行配置，输入运行名称和运行命令，直接应用即可。
+
+![image-20230220145511019](assets/image-20230220145511019.png)
+
+## 插件基础信息
+
+插件的基础信息都可以在resources/META-INF/plugin.xml文件中进行配置，我们可以修改一下默认的配置信息：
+
+```xml
+<idea-plugin>
+    <id>com.codermonster.hello-world-plugin</id>
+
+    <!--    插件名称，不允许出现plugin字符串-->
+    <name>Hello-World</name>
+    <!--联系信息-->
+    <vendor email="buaastys@163.com" url="https://codermonster.top/">码农怪兽</vendor>
 
 
+    <!--    插件描述信息，少于40个字符IDEA可能会红色高亮提示，但是对插件的大包编译无影响。-->
+    <description><![CDATA[
+        <h2>HelloWordPlugin</h2>
+        <p>路漫漫其修远兮，吾将上下而求索。</p><br>
+        <p>穷则独善其身，达则兼济天下。</p><br>
+        <p>人生自古谁无死，留取丹心照汗青。</p><br>
+        <p>我们是国家的主人，应该处处为国家着想。</p><br>
+  ]]></description>
 
+    <depends>com.intellij.modules.platform</depends>
 
+    <extensions defaultExtensionNs="com.intellij">
 
+    </extensions>
+    <!--    插件更新日志-->
+    <change-notes>
+        <![CDATA[
+      1.0.0 项目初始化<br>
+      1.0.1 搭建项目框架
+        ]]>
+    </change-notes>
+</idea-plugin>
+```
 
+重新运行项目，可以看到如下的显示信息：
 
+![image-20230220150708096](assets/image-20230220150708096.png)
 
-
-
-
-
-
+## 增加功能Action
 
 
 
