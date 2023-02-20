@@ -12,7 +12,7 @@
 
 怪兽本人的开发环境具体如下：
 
-1、JDK版本
+1、JDK版本（JDK17）
 
 ```shell
 # JDK版本
@@ -21,7 +21,7 @@ Java(TM) SE Runtime Environment (build 17.0.5+9-LTS-191)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 ```
 
-2、Gradle版本
+2、Gradle版本（Gradle7.6）
 
 ```shell
 # Gradle版本
@@ -39,7 +39,7 @@ JVM:          17.0.5 (Oracle Corporation 17.0.5+9-LTS-191)
 OS:           Mac OS X 10.14.6 x86_64
 ```
 
-3、IDEA开发工具版本
+3、IDEA开发工具版本（2022.3专业版）
 
 ![image-20230220133019093](assets/image-20230220133019093.png)
 
@@ -52,7 +52,9 @@ OS:           Mac OS X 10.14.6 x86_64
 >gradle --version
 >```
 
+## 项目创建
 
+得益于IDEA强大的功能使得我们创建一个IDEA插件项目变得非常简单，
 
 
 
