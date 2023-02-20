@@ -62,9 +62,25 @@ OS:           Mac OS X 10.14.6 x86_64
 
 ![image-20230220135005575](assets/image-20230220135005575.png)
 
+项目在创建过程中，会下载插件项目对应的依赖插件，主要包括两个：java和org.jetbrains.intellij，具体内容可以在项目路径下的build.gradle.kts文件中的plugins标签中查看。初始项目构建完成之后出现如下提示代表创建项目成功。
 
+![image-20230220140657915](assets/image-20230220140657915.png)
 
+项目创建成功之后，我们打开IDEA应用偏好设置，修改一下项目的编译版本信息。
 
+![image-20230220141204947](assets/image-20230220141204947.png)
+
+既然插件项目已经创建成功，那么我们接下来看一下项目的文件目录结构，了解各个目录的用处。
+
+![image-20230220142047146](assets/image-20230220142047146.png)
+
+>Gradle Wrapper解决了什么问题？
+>
+>1、你本地安装的Gradle版本跟项目所需的Gradle版本不一致容易导致问题，为了解决该问题，Gradle Wrapper应运而生，Gradle Wrapper是一个脚本，可调用Gradle的声明版本，并在编译时下载。因此，开发人员可以快速启动并运行Gradle项目，而无需遵循手动安装Gradle过程。
+>
+>2、使用项目根目录下的gradlew命令运行的Gradle版本是Gradle Wrapper中声明的Gradle版本，不是本地安装的Gradle版本。
+>
+>3、gradle/wrapper/gradle-wrapper.jar是实际下载对应Gradle版本的工具包。
 
 
 
