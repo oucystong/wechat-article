@@ -255,43 +255,52 @@ zipStorePath=wrapper/dists
 
 ## 增加功能Action
 
+Action 是插件开发中核心的一个概念，Action 可以理解为插件中某个功能的具体实现，举个例子，IDEA 中，默认通过快捷键 Ctrl+Alt+L ，来对代码文件进行格式 Format 。又比如，我们在 IDE 中，点击鼠标右键，会弹出一个功能菜单，这个菜单中的每一个选项，都对应着一个具体的功能操作，这个功能操作所做的事情，也是一个 Action 在代码中所做的事情。
 
+调用插件中的功能，最常见方式就是基于 Action 来实现的，Antion 代表一个具体的功能动作。Action 可通过快捷键、菜单选项来触发。
 
+使用Action的方式是通过一个实现类继承AnAction抽象类，实现其中的actionPerformed方法，在该方法中定义功能逻辑，即当快捷键或者菜单选项触发时，会执行方法中的内容。
 
+定义一个实现类HelloWorldAction，代码如下：
 
+```java
+public class HelloWorldAction extends AnAction {
 
+    @Override
+    public void actionPerformed(@NotNull AnActionEvent e) {
+        System.out.println("功能被触发");
+        // 在IDEA中发送系统通知
+        Notifications.Bus.notify(new Notification("HelloWorldPlugin", "欢迎来到插件世界！", NotificationType.INFORMATION), e.getProject());
+        // Notifications.Bus.notify方法接收两个参数，第一个参数是一个通知，第二个参数是项目
+        // Notification构造器包括三个参数
+        // 1、Group信息
+        // 2、通知信息
+        // 3、通知消息的类型
+    }
+}
+```
 
+如果插件想使用这个Action，那我们必须将这个Action注册到IDE，让IDE感知到才可以，这个过程是通过resources/META-INF/plugin.xml文件进行配置，具体配置如下：
 
+```xml
+<idea-plugin>
+    <actions>
+        <!-- 在此处添加你的Action -->
+        <action class="com.codermonster.helloworldplugin.HelloWorldAction" description="Notification Send">
+            <!-- 该标签表示通过快捷键触发Action，注意快捷键可能会冲突，导致功能无法被触发，更换绑定的快捷键即可 -->
+            <keyboard-shortcut first-keystroke="control shift 9" keymap="$default"/>
+        </action>
+    </actions>
+</idea-plugin>
+```
 
+运行插件项目，在新窗口中随便打开一个项目，然后触发快捷键，可以得到如下的通知：
 
+![image-20230220152649222](assets/image-20230220152649222.png)
 
+注意因为Windows和Mac键盘存在差异，所以在Mac上绑定上面的快捷键，但是当你按下对应快捷键的时候并不会触发，这是因为Control被绑定成了Command，所以按下Command+Shift+9的时候，在Mac上会触发上面的通知信息。如果不知道绑定了哪些快捷键，可以在应用偏好设置中搜索keymap进行查看。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image-20230220153304801](assets/image-20230220153304801.png)
 
 ## 源码及文档下载
 
