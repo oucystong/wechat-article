@@ -276,6 +276,7 @@ public class HelloWorldAction extends AnAction {
         // 1、Group信息
         // 2、通知信息
         // 3、通知消息的类型
+        // e.getProject()的作用是在多个项目IDE窗口打开的时候，让通知只在当前项目的IDE窗口右下角显示
     }
 }
 ```
