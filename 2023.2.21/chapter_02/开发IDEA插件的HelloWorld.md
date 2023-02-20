@@ -82,6 +82,58 @@ OS:           Mac OS X 10.14.6 x86_64
 >
 >3、gradle/wrapper/gradle-wrapper.jar是实际下载对应Gradle版本的工具包。
 
+下面我们看一下build.gradle.kts文件的具体内容：
+
+```kotlin
+// 项目依赖插件
+plugins {
+    id("java")
+    id("org.jetbrains.intellij") version "1.10.1"
+}
+// 项目Group信息
+group = "com.codermonster"
+// 版本信息
+version = "1.0-SNAPSHOT"
+// 依赖下载仓库
+repositories {
+    mavenCentral()
+}
+
+// Configure Gradle IntelliJ Plugin
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
+intellij {
+  // 运行插件的时候，启动的IDEA版本
+    version.set("2022.1.4")
+    type.set("IC") // Target IDE Platform
+
+    plugins.set(listOf(/* Plugin Dependencies */))
+}
+
+tasks {
+    // Set the JVM compatibility versions
+    withType<JavaCompile> {
+        sourceCompatibility = "11"
+        targetCompatibility = "11"
+    }
+
+    patchPluginXml {
+        sinceBuild.set("221")
+        untilBuild.set("231.*")
+    }
+
+    signPlugin {
+        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
+        privateKey.set(System.getenv("PRIVATE_KEY"))
+        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+    }
+
+    publishPlugin {
+        token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+}
+
+```
+
 
 
 
