@@ -1,18 +1,18 @@
 大家好，我是怪兽。
 
-接下来我们开始程序员学技术中必不可缺的一环，即开发插件世界中的HelloWrord。开发之前，首先明确几个前提条件：
+接下来我们开始程序员学技术中必不可缺的一环，即开发插件世界中的`HelloWrord`。开发之前，首先明确几个前提条件：
 
-1、安装JDK8及以上版本的开发环境。
+1、安装`JDK8`及以上版本的开发环境。
 
-2、安装IDEA开发工具。
+2、安装`IDEA`开发工具。
 
-3、安装Gradle依赖管理和构建工具。
+3、安装`Gradle`依赖管理和构建工具。
 
 ## 开发环境
 
 怪兽本人的开发环境具体如下：
 
-1、JDK版本（JDK17）
+1、`JDK`版本（`JDK17`）
 
 ```shell
 # JDK版本
@@ -21,7 +21,7 @@ Java(TM) SE Runtime Environment (build 17.0.5+9-LTS-191)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 ```
 
-2、Gradle版本（Gradle7.6）
+2、`Gradle`版本（`Gradle7.6`）
 
 ```shell
 # Gradle版本
@@ -39,7 +39,7 @@ JVM:          17.0.5 (Oracle Corporation 17.0.5+9-LTS-191)
 OS:           Mac OS X 10.14.6 x86_64
 ```
 
-3、IDEA开发工具版本（2022.3专业版）
+3、`IDEA`开发工具版本（`2022.3`专业版）
 
 ![image-20230220133019093](assets/image-20230220133019093.png)
 
@@ -54,19 +54,19 @@ OS:           Mac OS X 10.14.6 x86_64
 
 ## 项目创建
 
-得益于IDEA强大的功能使得我们创建一个IDEA插件项目变得非常简单，首先我们需要打开项目管理界面，新建一个项目：
+得益于`IDEA`强大的功能使得我们创建一个`IDEA`插件项目变得非常简单，首先我们需要打开项目管理界面，新建一个项目：
 
 ![image-20230220134715616](assets/image-20230220134715616.png)
 
-点击IDE Plugin可以填写插件项目的相关信息，项目名称填写hello-world-plugin，修改项目本地所在位置，选中新建项目类型为Plugin，使用语言为Java语言，同时填写Group信息和选择JDK版本，然后点击Create进行项目的创建。
+点击`IDE Plugin`可以填写插件项目的相关信息，项目名称填写`hello-world-plugin`，修改项目本地所在位置，选中新建项目类型为`Plugin`，使用语言为`Java`语言，同时填写`Group`信息和选择`JDK`版本，然后点击`Create`进行项目的创建。
 
 ![image-20230220135005575](assets/image-20230220135005575.png)
 
-项目在创建过程中，会下载插件项目对应的依赖插件，主要包括两个：java和org.jetbrains.intellij，具体内容可以在项目路径下的build.gradle.kts文件中的plugins标签中查看。初始项目构建完成之后出现如下提示代表创建项目成功。
+项目在创建过程中，会下载插件项目对应的依赖插件，主要包括两个：`java`和`org.jetbrains.intellij`，具体内容可以在项目路径下的`build.gradle.kts`文件中的`plugins`标签中查看。初始项目构建完成之后出现如下提示代表创建项目成功。
 
 ![image-20230220140657915](assets/image-20230220140657915.png)
 
-项目创建成功之后，我们打开IDEA应用偏好设置，修改一下项目的编译版本信息。
+项目创建成功之后，我们打开`IDEA`应用偏好设置，修改一下项目的编译版本信息。
 
 ![image-20230220141204947](assets/image-20230220141204947.png)
 
@@ -74,15 +74,15 @@ OS:           Mac OS X 10.14.6 x86_64
 
 ![image-20230220142047146](assets/image-20230220142047146.png)
 
->Gradle Wrapper解决了什么问题？
+>`Gradle Wrapper`解决了什么问题？
 >
->1、你本地安装的Gradle版本跟项目所需的Gradle版本不一致容易导致问题，为了解决该问题，Gradle Wrapper应运而生，Gradle Wrapper是一个脚本，可调用Gradle的声明版本，并在编译时下载。因此，开发人员可以快速启动并运行Gradle项目，而无需遵循手动安装Gradle过程。
+>1、你本地安装的`Gradle`版本跟项目所需的`Gradle`版本不一致容易导致问题，为了解决该问题，`Gradle Wrapper`应运而生，`Gradle Wrapper`是一个脚本，可调用`Gradle`的声明版本，并在编译时下载。因此，开发人员可以快速启动并运行`Gradle`项目，而无需遵循手动安装`Gradle`过程。
 >
->2、使用项目根目录下的gradlew命令运行的Gradle版本是Gradle Wrapper中声明的Gradle版本，不是本地安装的Gradle版本。
+>2、使用项目根目录下的`gradlew`命令运行的`Gradle`版本是`Gradle Wrapper`中声明的`Gradle`版本，不是本地安装的`Gradle`版本。
 >
->3、gradle/wrapper/gradle-wrapper.jar是实际下载对应Gradle版本的工具包。
+>3、`gradle/wrapper/gradle-wrapper.jar`是实际下载对应`Gradle`版本的工具包。
 
-下面我们看一下build.gradle.kts文件的具体内容：
+下面我们看一下`build.gradle.kts`文件的具体内容：
 
 ```kotlin
 // 项目依赖插件
@@ -134,7 +134,7 @@ tasks {
 
 ```
 
-我们继续来看一下resources/META-INF/plugin.xml文件的信息：
+我们继续来看一下`resources/META-INF/plugin.xml`文件的信息：
 
 ```xml
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
@@ -172,7 +172,7 @@ tasks {
 </idea-plugin>
 ```
 
-Gradle Wrapper的配置文件是gradle/wrapper/gradle-wrapper.properties，我们继续看一下该文件的信息：
+`Gradle Wrapper`的配置文件是`gradle/wrapper/gradle-wrapper.properties`，我们继续看一下该文件的信息：
 
 ```properties
 # 解压Gradle压缩包之后的文件存放处
@@ -187,23 +187,23 @@ zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
 
-至此，我们已经完成了一个插件项目的创建，在项目的右上方可以直接运行项目，点击运行之后，会在沙盒中新打开一个IDEA窗口。
+至此，我们已经完成了一个插件项目的创建，在项目的右上方可以直接运行项目，点击运行之后，会在沙盒中新打开一个`IDEA`窗口。
 
 ![image-20230220144805564](assets/image-20230220144805564.png)
 
-我们可以看到该IDEA窗口的版本信息和配置文件build.gradle.kts中规定的版本信息一致。除此之外，点击Plugins，可以看到新创建的插件已经被安装在新打开的IDEA中了。
+我们可以看到该`IDEA`窗口的版本信息和配置文件`build.gradle.kts`中规定的版本信息一致。除此之外，点击`Plugins`，可以看到新创建的插件已经被安装在新打开的`IDEA`中了。
 
 ![image-20230220144959225](assets/image-20230220144959225.png)
 
-关闭新创建IDEA的窗口即可结束插件项目的运行。
+关闭新创建`IDEA`的窗口即可结束插件项目的运行。
 
 ## 运行项目的三种方式
 
-按照上面的过程创建完插件项目之后，在IDEA界面的右上角会自动出现Run Plugin的按钮，点击即可运行，除此之外，还有其他两种运行插件的方式，总结三种运行插件项目的方式如下：
+按照上面的过程创建完插件项目之后，在`IDEA`界面的右上角会自动出现`Run Plugin`的按钮，点击即可运行，除此之外，还有其他两种运行插件的方式，总结三种运行插件项目的方式如下：
 
 ![image-20230220144427336](assets/image-20230220144427336.png)
 
-如果右上角没有出现Run Plugin的按钮，也可以自行配置，点击Edit Configurations。
+如果右上角没有出现`Run Plugin`的按钮，也可以自行配置，点击`Edit Configurations`。
 
 ![image-20230220145342779](assets/image-20230220145342779.png)
 
@@ -213,7 +213,7 @@ zipStorePath=wrapper/dists
 
 ## 插件基础信息
 
-插件的基础信息都可以在resources/META-INF/plugin.xml文件中进行配置，我们可以修改一下默认的配置信息：
+插件的基础信息都可以在`resources/META-INF/plugin.xml`文件中进行配置，我们可以修改一下默认的配置信息：
 
 ```xml
 <idea-plugin>
@@ -255,13 +255,13 @@ zipStorePath=wrapper/dists
 
 ## 增加功能Action
 
-Action 是插件开发中核心的一个概念，Action 可以理解为插件中某个功能的具体实现，举个例子，IDEA 中，默认通过快捷键 Ctrl+Alt+L ，来对代码文件进行格式 Format 。又比如，我们在 IDE 中，点击鼠标右键，会弹出一个功能菜单，这个菜单中的每一个选项，都对应着一个具体的功能操作，这个功能操作所做的事情，也是一个 Action 在代码中所做的事情。
+`Action` 是插件开发中核心的一个概念，`Action` 可以理解为插件中某个功能的具体实现，举个例子，`IDEA` 中，默认通过快捷键 `Command+Option+L` ，来对代码文件进行格式 `Format` 。又比如，我们在 `IDE` 中，点击鼠标右键，会弹出一个功能菜单，这个菜单中的每一个选项，都对应着一个具体的功能操作，这个功能操作所做的事情，也是一个 `Action` 在代码中所做的事情。
 
-调用插件中的功能，最常见方式就是基于 Action 来实现的，Antion 代表一个具体的功能动作。Action 可通过快捷键、菜单选项来触发。
+调用插件中的功能，最常见方式就是基于 `Action` 来实现的，`Antion` 代表一个具体的功能动作。`Action` 可通过快捷键、菜单选项来触发。
 
-使用Action的方式是通过一个实现类继承AnAction抽象类，实现其中的actionPerformed方法，在该方法中定义功能逻辑，即当快捷键或者菜单选项触发时，会执行方法中的内容。
+使用`Action`的方式是通过一个实现类继承`AnAction`抽象类，实现其中的`actionPerformed`方法，在该方法中定义功能逻辑，即当快捷键或者菜单选项触发时，会执行方法中的内容。
 
-定义一个实现类HelloWorldAction，代码如下：
+定义一个实现类`HelloWorldAction`，代码如下：
 
 ```java
 public class HelloWorldAction extends AnAction {
@@ -281,7 +281,7 @@ public class HelloWorldAction extends AnAction {
 }
 ```
 
-如果插件想使用这个Action，那我们必须将这个Action注册到IDE，让IDE感知到才可以，这个过程是通过resources/META-INF/plugin.xml文件进行配置，具体配置如下：
+如果插件想使用这个`Action`，那我们必须将这个`Action`注册到`IDE`，让`IDE`感知到才可以，这个过程是通过`resources/META-INF/plugin.xml`文件进行配置，具体配置如下：
 
 ```xml
 <idea-plugin>
@@ -299,7 +299,7 @@ public class HelloWorldAction extends AnAction {
 
 ![image-20230220152649222](assets/image-20230220152649222.png)
 
-注意因为Windows和Mac键盘存在差异，所以在Mac上绑定上面的快捷键，但是当你按下对应快捷键的时候并不会触发，这是因为Control被绑定成了Command，所以按下Command+Shift+9的时候，在Mac上会触发上面的通知信息。如果不知道绑定了哪些快捷键，可以在应用偏好设置中搜索KeyMap进行查看。
+注意因为`Windows`和`Mac`键盘存在差异，所以在`Mac`上绑定上面的快捷键，但是当你按下对应快捷键的时候并不会触发，这是因为`Control`被绑定成了`Command`，所以按下`Command+Shift+9`的时候，在`Mac`上会触发上面的通知信息。如果不知道绑定了哪些快捷键，可以在应用偏好设置中搜索`KeyMap`进行查看。
 
 ![image-20230220153304801](assets/image-20230220153304801.png)
 
