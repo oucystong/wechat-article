@@ -10,9 +10,9 @@
 
 ## 所用工具
 
-排版工具：https://markdown.com.cn/editor/
+1. 排版工具：https://markdown.com.cn/editor/
 
-样式内容：
+2. 样式内容：
 
 ```css
 /*自定义样式，实时生效*/
@@ -266,6 +266,10 @@
 #nice .inline-equation svg {  
 }
 ```
+
+3. 代码风格选择（同时选中两个）
+   1. Mac风格
+   2. atom-one-dark
 
 ## 请喝可乐
 
